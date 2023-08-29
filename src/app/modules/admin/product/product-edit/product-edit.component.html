@@ -1,0 +1,59 @@
+<div class="popup">
+    <div class="popup-in slide-in-br ">
+        <div class="popup-in-header fixed-header">
+            <span>Add a new Product</span>
+            <div class="popup-in-header-x" (click)="closeAdd()">
+                <i class="fa-solid fa-x fa-s"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="pupup-in-form">
+            <form [formGroup]="productFrom" (ngSubmit)="submitProductFrom()" >
+                <div class="popup-in-form-list">
+                    <label >Name</label>
+                    <input type="text" name="name" [formControlName]="'name'"
+                           [ngClass]="{'error-input-board' : !productFrom.get('name')?.valid &&
+                           productFrom.get('username')?.touched}">
+                    <label >Description</label>
+                    <textarea type="text" name="description" [formControlName]="'description'"
+                           [ngClass]="{'error-input-board' : !productFrom.get('description')?.valid &&
+                           productFrom.get('description')?.touched}"></textarea>
+                    <label >Category</label>
+                    <input type="text" name="category" [formControlName]="'category'"
+                           [ngClass]="{'error-input-board' : !productFrom.get('category')?.valid &&
+                           productFrom.get('category')?.touched}">
+                    <label >Price</label>
+                    <input type="number" name="price" [formControlName]="'price'"
+                           [ngClass]="{'error-input-board' : !productFrom.get('price')?.valid &&
+                           productFrom.get('price')?.touched}">
+                  <label >Discount</label>
+                  <input type="number" name="discount" [formControlName]="'discount'"
+                         [ngClass]="{'error-input-board' : !productFrom.get('discount')?.valid &&
+                           productFrom.get('discount')?.touched}">
+                    <label >Quantity</label>
+                    <input type="number" name="quantity" [formControlName]="'quantity'"
+                           [ngClass]="{'error-input-board' : !productFrom.get('quantity')?.valid &&
+                           productFrom.get('quantity')?.touched}">
+                    <label >Banner</label>
+                    <input type="file" class="form-control"  name="banner" [formControlName]="'banner'"
+                           (change)="onBannerChanged($event)"
+                           [ngClass]="{'error-input-board' : !productFrom.get('banner')?.valid &&
+                           productFrom.get('banner')?.touched}"/>
+                    <label >Images</label>
+                    <input type="file" class="form-control" name="images" multiple [formControlName]="'images'"
+                           (change)="onImagesChanged($event)"
+                           [ngClass]="{'error-input-board' : !productFrom.get('images')?.valid &&
+                           productFrom.get('images')?.touched}"/>
+                </div>
+                <hr>
+                <div class="popup-in-form-buttons">
+                    <input type="button" value="close" class="close-button" (click)="closeAdd()">
+                    <button class="save-button" name="save" type="submit" >
+                         <span *ngIf="!spinnerToggle">Save Changes</span>
+                        <i *ngIf="spinnerToggle" class="fa-solid fa-spinner fa-spin"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

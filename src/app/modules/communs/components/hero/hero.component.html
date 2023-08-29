@@ -1,0 +1,146 @@
+<div class="mycontainer">
+  <div class="mycontainer-video">
+    <video  loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+      <source src="assets/vedio/herovideo.mp4" type="video/mp4">
+    </video>
+    <div class="mycontainer-video-gradiant">
+
+    </div>
+    <div class="mycontainer-video-text" >
+        <div class="mycontainer-video-text-header focus-in-contract" *ngIf="showText">
+          SALE UP TO 30% OFF
+        </div>
+      <div class="mycontainer-video-text-core focus-in-contract" *ngIf="showText">
+        THE BEST STORE YOU WILL NEED IN EVERY ELECTRONIC ITEM
+      </div>
+      <div class="mycontainer-video-text-footer focus-in-contract" *ngIf="showText">
+        GET YOUR PRODUCT NOW
+      </div>
+    </div>
+  </div>
+
+  <div class="mycontainer-brand">
+    <div class="mycontainer-brand-img">
+        <img src="assets/images/pup-hero.png">
+    </div>
+    <div class="mycontainer-brand-desc">
+      <div class="mycontainer-brand-desc-exp">
+          <h1  class="years-exp" >5</h1>
+<!--        <app-counter class="years-exp" [maxCount]="5" [showUpTime]="2000" [transitionTime]="400"></app-counter>-->
+        <div class="years-exp-txt" (scroll)="trythis()"><div>YEARS</div>
+                                 <div>EXPERIENCE</div>
+                                  <div>WORKING</div>
+                                </div>
+
+      </div>
+      <div class="mycontainer-brand-desc-title">
+        We Are The Best In The Business OF The Town
+      </div>
+      <div class="mycontainer-brand-desc-text">
+        We’re your 24/7 tech support team, ready to set up and fix your mobile,
+         tablet or computer, and help you master it.
+          We can help you in selected stores and over the phone.
+           We do fast phone repair. In most cases, technicians will be able to repair your device in just minutes, we’ll normally.
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="mycontainer-numbers">
+      <div class="mycontainer-numbers-happy">
+        <div class="mycontainer-numbers-happy-number">
+          <app-counter class="mycontainer-numbers-happy-number" [maxCount]="403" [showUpTime]="2000" [transitionTime]="10"></app-counter>
+
+        </div>
+        <div class="mycontainer-numbers-happy-txt">
+          HAPPY CLIENTS
+        </div>
+      </div>
+      <div class="mycontainer-numbers-show">
+        <div class="">
+          <app-counter class="mycontainer-numbers-show-number" [maxCount]="259" [showUpTime]="2000" [transitionTime]="10"></app-counter>
+
+        </div>
+        <div class="mycontainer-numbers-show-txt">
+          SHOW ROOM
+        </div>
+      </div>
+      <div class="mycontainer-numbers-product">
+      <div class="mycontainer-numbers-product-number">
+        <app-counter class="mycontainer-numbers-product-number" [maxCount]="288" [showUpTime]="2000" [transitionTime]="10"></app-counter>
+
+      </div>
+      <div class="mycontainer-numbers-product-txt">
+        PRODUCTS
+      </div>
+      </div>
+      <div class="mycontainer-numbers-sales">
+        <div class="mycontainer-numbers-sales-number">
+          <app-counter class="mycontainer-numbers-sales-number" [maxCount]="195" [showUpTime]="2000" [transitionTime]="10"></app-counter>
+
+        </div>
+        <div class="mycontainer-numbers-sales-txt">
+          BILLON SALES
+        </div>
+      </div>
+  </div>
+
+  <div class="mycontainer-bestproducts">
+      <div class="mycontainer-bestproducts-header">
+      <div class="mycontainer-bestproducts-header-txt">
+        Popular products
+      </div>
+        <div class="mycontainer-bestproducts-header-view">
+        View All Products
+          <i class="fa-solid fa-arrow-right fa-sm" ></i>
+      </div>
+
+      </div>
+      <div class="mycontainer-bestproducts-products">
+        <app-list-products [best5products]="true"></app-list-products>
+      </div>
+
+    <div class="mycontainer-bestproducts-flex">
+      <div class="mycontainer-bestproducts-flex-txt">
+        <i class="fa-solid fa-phone" style="color: #000000;font-size: 55px"></i>
+        <h2>Call 48+ Hours</h2>
+        <ul style="font-size: 19px;padding: 5px 22px;">
+          <li>Good Service</li>
+          <li>For Community</li>
+          <li> Long Term Development</li>
+          <li> Save Our Planet</li>
+          <li> Help People</li>
+        </ul>
+      </div>
+      <div class="mycontainer-bestproducts-flex-txt flex-ative">
+        <i class="fa-solid fa-battery-full" style="color: #000000;font-size: 55px"></i>
+        <h2>Battery Services</h2>
+        <ul style="font-size: 19px;padding: 5px 22px;">
+          <li>Good Service</li>
+          <li>For Community</li>
+          <li> Long Term Development</li>
+          <li> Save Our Planet</li>
+          <li> Help People</li>
+        </ul>
+
+      </div>
+      <div class="mycontainer-bestproducts-flex-txt">
+
+        <i class="fa-solid fa-globe" style="color: #000000;font-size: 55px"></i>
+        <h2>Global Warranty</h2>
+        <ul style="font-size: 19px;padding: 5px 22px;">
+          <li>Good Service</li>
+          <li>For Community</li>
+          <li> Long Term Development</li>
+          <li> Save Our Planet</li>
+          <li> Help People</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

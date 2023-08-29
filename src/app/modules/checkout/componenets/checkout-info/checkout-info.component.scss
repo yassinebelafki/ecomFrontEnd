@@ -1,0 +1,26 @@
+section {
+  margin-top: 100px;
+}
+.title-style{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: hsl(52, 0%, 98%);
+}
+.title-quote{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  color: hsl(52, 0%, 98%);
+}
+button  {
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+}
+button:hover {
+  color: white;
+  background-color: #e52e06;
+}

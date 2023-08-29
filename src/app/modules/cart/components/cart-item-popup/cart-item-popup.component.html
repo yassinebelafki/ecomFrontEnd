@@ -1,0 +1,31 @@
+<div class="mycontainer">
+  <div class="mycontainer-products" *ngIf="cartItems.length!=0">
+    <div class="mycontainer-products-item" *ngFor="let cartItem of cartItems">
+      <div class="mycontainer-products-item-img">
+        <img [src]="cartItem.product.banner">
+      </div>
+      <div class="mycontainer-products-item-info">
+        <div class="mycontainer-products-item-info-name">
+          {{cartItem.product.title}}
+        </div>
+        <div class="mycontainer-p roducts-item-info-price">
+            {{cartItem.product.price}} $
+        </div>
+        <div  class="mycontainer-products-item-info-quantity">
+          {{cartItem.quantity}}
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  <div class="mycontainer-btn" *ngIf="cartItems.length!=0">
+      <button [routerLink]="'cart'">View Cart</button>
+  </div>
+  <div class="mycontainer-msg" *ngIf="cartItems.length==0">
+    The Cart is Empty
+  </div>
+
+</div>

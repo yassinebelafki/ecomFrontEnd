@@ -1,0 +1,104 @@
+
+<div class="mycontainer-parent" >
+  <div class="mycontainer" *ngIf="productFetched">
+    <div class="mycontainer-images">
+      <div class="mycontainer-images-main">
+        <img class="scale-in-center" [src]="product.banner">
+      </div>
+      <div class="mycontainer-images-others">
+        <img class="scale-in-center" *ngFor="let img of product.productImagesDto" [src]="img.image">
+      </div>
+    </div>
+    <div class="mycontainer-details">
+      <div class="mycontainer-details-title">
+        {{product.title}}
+      </div>
+      <div class="mycontainer-details-rating">
+        <ngb-rating [max]="5" [readonly]="true" [rate]="4"></ngb-rating>
+      </div>
+      <div class="mycontainer-details-prices">
+
+        <div class="mycontainer-details-prices-org">
+          {{product.price}} $
+        </div>
+        <div class="mycontainer-details-prices-old">
+          {{product.price - ((product.discount/100)*product.price)}} $
+          $
+        </div>
+        <div class="mycontainer-details-prices-discount">
+          {{product.discount}}%
+        </div>
+      </div>
+      <div class="mycontainer-details-shipping">
+        <i class="fa-solid fa-truck-fast" style="color: #000000;margin-right: 5px;"></i>
+        Shipping
+      </div>
+      <div class="mycontainer-details-quantity">
+        Quantity :
+        <div class="mycontainer-details-quantity-minus" style="margin-left: 15px">
+          <i class="fa-solid fa-minus" style="color: #000000;" (click)="decrementQuantity()"></i>
+        </div>
+        <div class="mycontainer-details-quantity-minus">
+          <input type="number" value="{{quantity}}" min="1">
+        </div>
+        <div class="mycontainer-details-quantity-plus">
+          <i class="fa-solid fa-plus" style="color: #000000;" (click)="incrementQuantity()"></i>
+        </div>
+      </div>
+      <div class="mycontainer-details-addtocard">
+        <button (click)="addToCart(product.id,1)">Add To Card</button>
+      </div>
+
+    </div>
+  </div>
+  <app-spinner *ngIf="!productFetched"></app-spinner>
+
+  <div class="product-desc" *ngIf="productFetched">
+    <div class="layout">
+      <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
+      <div class="page home-page">
+        <div class="page-contents">
+          <p>{{product.description}}</p>
+        </div>
+      </div>
+      <label class="nav" for="home">
+    <span>
+      Description
+    </span>
+      </label>
+
+      <input name="nav" type="radio" class="about-radio" id="about" />
+      <div class="page about-page">
+        <div class="page-contents">
+          <p  *ngIf="product.productEvaluation?.length==0 || product.productEvaluation==null">This Product has no evaluations yet!</p>
+          <div class="usereval">
+            <div class="usereval-item" *ngFor="let evaluation of product.productEvaluation">
+              <app-user-evaluation   [productEvaluation]="evaluation"></app-user-evaluation>
+            </div>
+          </div>
+        </div>
+      </div>
+      <label class="nav" for="about">
+    <span>
+    Reviews
+      </span>
+      </label>
+
+      <input name="nav" type="radio" class="contact-radio" id="contact" />
+      <div class="page contact-page">
+        <div class="page-contents">
+        <app-user-comment [productId]="product.id"></app-user-comment>
+        </div>
+      </div>
+      <label class="nav" for="contact">
+    <span>
+    Comments
+      </span>
+
+      </label>
+    </div>
+  </div>
+
+
+
+</div>

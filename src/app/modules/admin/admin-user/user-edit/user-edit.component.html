@@ -1,0 +1,46 @@
+<div class="popup">
+  <div class="popup-in slide-in-br ">
+    <div class="popup-in-header fixed-header">
+      <span>Add a new Product</span>
+      <div class="popup-in-header-x" (click)="closeAdd()">
+        <i class="fa-solid fa-x fa-s"></i>
+      </div>
+    </div>
+    <hr>
+    <div class="pupup-in-form">
+      <form [formGroup]="userFrom" (ngSubmit)="submitUserFrom()" >
+        <div class="popup-in-form-list">
+          <label >Fisrt Name</label>
+          <input type="text" name="name" [formControlName]="'firstName'"
+                 [ngClass]="{'error-input-board' : !userFrom.get('firstName')?.valid &&
+                           userFrom.get('firstName')?.touched}">
+          <label >Last Name</label>
+          <input type="text" name="description" [formControlName]="'lastName'"
+                    [ngClass]="{'error-input-board' : !userFrom.get('lastName')?.valid &&
+                           userFrom.get('lastName')?.touched}">
+          <label >email</label>
+          <input type="text" name="category" [formControlName]="'email'"
+                 [ngClass]="{'error-input-board' : !userFrom.get('email')?.valid &&
+                           userFrom.get('email')?.touched}">
+          <label >password</label>
+          <input type="password" name="price" [formControlName]="'password'"
+                 [ngClass]="{'error-input-board' : !userFrom.get('password')?.valid &&
+                           userFrom.get('password')?.touched}">
+          <label >role</label>
+          <input type="text" name="discount" [formControlName]="'role'"
+                 [ngClass]="{'error-input-board' : !userFrom.get('role')?.valid &&
+                           userFrom.get('role')?.touched}">
+
+        </div>
+        <hr>
+        <div class="popup-in-form-buttons">
+          <input type="button" value="close" class="close-button" (click)="closeAdd()">
+          <button class="save-button" name="save" type="submit" >
+            <span *ngIf="!spinnerToggle">Save Changes</span>
+            <i *ngIf="spinnerToggle" class="fa-solid fa-spinner fa-spin"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

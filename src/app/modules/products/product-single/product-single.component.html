@@ -1,0 +1,34 @@
+<div class="mycontainer">
+  <div class="mycontainer-img" (mouseenter)="showActions()" (mouseleave)="removeActions()">
+    <img [src]="product.banner">
+    <div class="mycontainer-actions fade-in" *ngIf="actionshowed">
+      <div class="mycontainer-actions-buy roll-in-blurred-left" (click)="addToCart(product.id,1)">
+        <img class="action-icon" src="assets/images/shopping-cart0.png">
+        <div class="tooltip">Add to Cart</div>
+      </div>
+
+      <div class="mycontainer-actions-view roll-in-blurred-left" [routerLink]="'/products/'+product.id">
+        <img class="action-icon" src="assets/images/show-product0.png">
+        <div class="tooltip-showProduct">Show Product</div>
+      </div>
+    </div>
+  </div>
+  <div class="mycontainer-details">
+    <div class="mycontainer-details-stars">
+      <ngb-rating [max]="5" [readonly]="true" [rate]="product.globalProductRating"></ngb-rating>
+    </div>
+    <div class="mycontainer-details-name">
+      {{product.title}}
+    </div>
+    <div class="mycontainer-details-prices">
+      <div class="mycontainer-details-prices-org">
+        {{product.price}} $
+      </div>
+      <div class="mycontainer-details-prices-old" *ngIf="product.discount!=0 && product.discount!=undefined">
+        {{product.price - ((product.discount/100)*product.price)}} $
+      </div>
+    </div>
+
+  </div>
+
+</div>

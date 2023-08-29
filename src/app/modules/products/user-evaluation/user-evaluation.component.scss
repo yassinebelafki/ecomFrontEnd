@@ -1,0 +1,76 @@
+
+
+.mycontainer {
+  background-color: rgba(241, 241, 241, 1);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mycontainer-comment {
+  color: rgba(88, 88, 88, 1);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.mycontainer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mycontainer-bottom-name {
+  font-size: 13px;
+  font-weight: 550;
+}
+.mycontainer-bottom-date {
+  font-size: 13px;
+  font-weight: 550;
+
+}
+
+.mycontainer-bottom-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+
+ngb-rating {
+  font-size: 17px;
+  border-radius: 5px;
+  font-weight: 100;
+  color: #FFC200;
+}
+
+@media screen and (max-width: 1050px) {
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+}
+
+@media screen and (max-width: 550px) {
+
+  .mycontainer-comment {
+    font-weight: 380;
+    font-size: 10px;
+  }
+  .mycontainer-bottom-name {
+    font-size: 9px;
+    font-weight: 550;
+  }
+  .mycontainer-bottom-date {
+    font-size: 9px;
+    font-weight: 550;
+
+  }
+  ngb-rating {
+    font-size: 10px;
+    font-weight: 100;
+
+  }
+}

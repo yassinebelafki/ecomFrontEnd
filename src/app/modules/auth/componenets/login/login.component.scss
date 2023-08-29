@@ -1,0 +1,150 @@
+.parent-con{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mycontainer {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  width: 800px;
+  padding: 0px;
+  border: solid 0.001rem;
+  border-radius:5px ;
+  border-color: #D8D9CF;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+
+}
+.mycontainer-header {
+  background-color: #f8f9fa;
+  padding: 30px 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 0.001em;
+  border-radius:5px ;
+  border-color: #D8D9CF;
+  font-size: 20px;
+  font-weight: 700;
+}
+.mycontainer-content{
+  padding: 40px 150px;
+}
+
+table tr td {
+  padding: 10px;
+}
+.mycontainer-content-signup{
+  background-color: transparent;
+  background-color: #0079D3;
+  color:#f8f9fa ;
+  border: 1px solid;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 16px;
+  cursor: pointer;
+}
+input {
+  border: solid 1px;
+  border-radius: 2px;
+  padding: 3px 7px;
+  border-color: #D8D9CF;
+}
+input:focus {
+  outline: none;
+}
+span {
+  color: #0079D3;
+  cursor: pointer;
+}
+.error-msg{
+  color: red;
+  font-size: 12px;
+}
+.error-input-board {
+  border: solid 1px red;
+
+}
+.myspinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+
+.login-error {
+  background-color: red;
+  color: white;
+  padding: 15px 10px;
+  border-radius:4px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shake-horizontal {
+  -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+
+@-webkit-keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+    transform: translateX(-8px);
+  }
+}
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+    transform: translateX(-8px);
+  }
+}
+

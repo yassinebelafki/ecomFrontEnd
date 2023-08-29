@@ -1,0 +1,42 @@
+<div class="mycontainer">
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+            <td ><img style="width: 80px" [src]="product.banner"></td>
+            <td>{{product.title}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+              <td>
+                <li class="list-inline-item">
+                  <button  (click)="toggleUpdate(product)" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                </li>
+                <li class="list-inline-item">
+                  <button (click)="deleteProduct(product.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash">
+
+                  </i></button>
+              </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <img [src]="image">
+    <div class="floating-container" (click)="toggleAdd()">
+        <div class="floating-button">+</div>
+    </div>
+    <app-product-edit *ngIf="addToggled" (addToggled)="addToggledListinner($event)"
+                      (productAdded)="productAdded($event)"></app-product-edit>
+  <app-product-edit [updatedProduct]="productToUpdate" *ngIf="updateToggled"  (addToggled)="addToggledListinner($event)"
+                    (productAdded)="productAdded($event)"></app-product-edit>
+</div>

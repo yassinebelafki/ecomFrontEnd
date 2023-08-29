@@ -1,0 +1,4 @@
+<app-spinner *ngIf="!productFetched"></app-spinner>
+<div class="mycontainer" *ngIf="productFetched">
+  <app-product-single *ngFor="let product of products  | productSearch: searchTerm" [product]="product"></app-product-single>
+</div>

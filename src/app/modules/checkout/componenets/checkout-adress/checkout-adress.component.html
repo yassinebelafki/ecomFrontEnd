@@ -1,0 +1,67 @@
+<div class="mycontainer">
+  <div class="mycontainer-uaddress">
+      <div class="mycontainer-uaddress-empty" *ngIf="userAddresses.length==0">
+          You have no addresses saved!
+      </div>
+    <div class="mycontainer-uaddress-list" *ngIf="userAddresses.length!=0">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Address</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let address of userAddresses">
+          <td >
+            <p style="font-size: 18px;">{{address.addressContent}}</p>
+            <p style="font-size: 16px;font-weight: 600">{{address.phone}}</p>
+          </td>
+          <td>
+            <input class="form-check-input" type="radio" name="address" value="{{address.id}}" [(ngModel)]="addressOption">
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="mycontainer-address-input">
+    <h3>Add new Address</h3>
+    <form>
+
+      <label class="d-block mb-4">
+        <span class="form-label d-block">Address</span>
+        <input
+          name="address1"
+          type="text"
+          class="form-control"
+          placeholder=""
+          [disabled]="addressOption"
+          [(ngModel)]="userNewAddress"
+        />
+      </label>
+
+
+
+      <label class="d-block mb-4">
+        <span class="form-label d-block">Telephone</span>
+        <input
+          name="telephone"
+          type="text"
+          class="form-control"
+          placeholder=""
+          [(ngModel)]="userNewPhone"
+          [disabled]="addressOption"
+        />
+      </label>
+
+
+      <div class="mb-3 payment-btn">
+        <button  (click)="GoToPayment()">Go To Payment</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

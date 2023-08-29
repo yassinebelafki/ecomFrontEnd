@@ -1,0 +1,61 @@
+<header>
+  <h1>My Orders</h1>
+  <p>View all of your pending orders here.</p>
+</header>
+<div  class="container" *ngFor="let command of commands;let i = index">
+  <div class="heading">
+    <div class="odetails-1">
+      <p><b>Order</b></p>
+      <p>#{{command.id}}</p>
+    </div>
+    <div class="odetails-2">
+      <p>Order Placed: {{command.localDateTime | date:'yyyy-MM-dd'}}</p>
+    </div>
+
+    <button style="font-size: 13px;text-align: center;padding: 8px 13px" >
+      {{command.status}}
+    </button>
+  </div>
+
+  <hr>
+
+  <div class="card-container" *ngFor="let cartItem of command.shoppingCarts">
+    <div class="card">
+      <div class="img">
+        <img [src]="cartItem.product.banner" >
+      </div>
+      <div class="parent">
+        <div class="content">
+          <div class="details-1">
+            <h1>{{cartItem.product.title}}</h1>
+            <p>X {{cartItem.quantity}}</p>
+          </div>
+          <div class="details-2">
+            <p>In Total : </p>
+            <p><b>{{cartItem.quantity*cartItem.product.price}} $</b></p>
+          </div>
+        </div>
+        <div class="status">
+<!--          <div class="sec1">-->
+<!--            <p>Status</p>-->
+<!--            <h2>{{command.status}}</h2>-->
+<!--          </div>-->
+          <div class="sec2">
+            <p>Delivery Expected By</p>
+            <h3>{{command.localDateTime | date:'yyyy-MM-dd'}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+
+  <div class="card-bottom">
+    <button (click)="deleteCommand(command.id)" style="font-weight: 600;">✖ CANCEL ORDER</button>
+    <h1 style="font-size: 20px;font-weight: 580">Total : {{calculateTotal(i)}} $</h1>
+  </div>
+</div>
+<div class="order-vide" *ngIf="commands.length==0">
+      You dont have any Orders Yet!
+</div>

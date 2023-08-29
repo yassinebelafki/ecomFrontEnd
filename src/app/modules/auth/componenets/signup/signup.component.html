@@ -1,0 +1,64 @@
+<div class="parent-con">
+  <div class="mycontainer"  >
+    <div class="mycontainer-header">
+      Register
+    </div>
+    <div class="mycontainer-content">
+      <form [formGroup]="signUpForm" (ngSubmit)="signupClient()">
+        <table>
+
+          <tr>
+            <td>First Name</td>
+            <td><input [formControlName]="'firstname'" type="text" [ngClass]="{'error-input-board' : !signUpForm.get('firstname')?.valid && signUpForm.get('firstname')?.touched}">
+              <p *ngIf="!signUpForm.get('firstname')?.valid && signUpForm.get('firstname')?.touched"
+                 class="error-msg">
+                Can you please enter your firstName
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Last Name</td>
+            <td><input [formControlName]="'lastname'" type="text" [ngClass]="{'error-input-board' : !signUpForm.get('lastname')?.valid && signUpForm.get('lastname')?.touched}">
+              <p *ngIf="!signUpForm.get('lastname')?.valid && signUpForm.get('lastname')?.touched"
+                 class="error-msg">
+                Can you please enter your lastname
+              </p>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Email</td>
+            <td><input type="email" [formControlName]="'email'" [ngClass]="{'error-input-board' : !signUpForm.get('email')?.valid && signUpForm.get('email')?.touched}">
+              <p *ngIf="!signUpForm.get('email')?.valid && signUpForm.get('email')?.touched"
+                 class="error-msg">
+                Can you please enter a valid email
+              </p></td>
+          </tr>
+
+          <tr>
+            <td>Password</td>
+            <td><input type="password" [formControlName]="'password'" [ngClass]="{'error-input-board' : !signUpForm.get('password')?.valid && signUpForm.get('password')?.touched}">
+              <p *ngIf="!signUpForm.get('password')?.valid && signUpForm.get('password')?.touched"
+                 class="error-msg">
+                Can you please enter a valid password
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><p><button [disabled]="!signUpForm.valid"  type="submit"  class="mycontainer-content-signup">
+              <div *ngIf="!isloading">Sign Up</div>
+              <i *ngIf="isloading" class="fa-solid fa-spinner fa-spin"></i>
+            </button>
+              Existing User? <a  [routerLink]="'/login'"><span>Log In</span></a></p></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+<!--  <div class="myspinner" *ngIf="isloading">-->
+<!--    <app-spinner></app-spinner>-->
+<!--  </div>-->
+</div>

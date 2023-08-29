@@ -1,0 +1,45 @@
+<div class="mycontainer">
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let admin of admins">
+      <td>{{admin.id}}</td>
+      <td>{{admin.firstName}}</td>
+      <td>{{admin.lastName}}</td>
+      <td>{{admin.email}}</td>
+      <td>{{admin.role}}</td>
+      <td>
+        <li class="list-inline-item">
+          <button  (click)="toggleUpdate(admin)" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+        </li>
+        <li class="list-inline-item">
+          <button (click)="deleteProduct(admin.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash">
+
+          </i></button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <div class="floating-container" (click)="toggleAdd()">
+    <div class="floating-button">+</div>
+  </div>
+  <app-user-edit *ngIf="addToggled" (addToggled)="addToggledListinner($event)"
+                    (userAdded)="userAdded($event)"></app-user-edit>
+
+  <app-user-edit *ngIf="updateToggled" (addToggled)="addToggledListinner($event)"
+                 (userAdded)="userAdded($event)" [updatedUser]="adminToUpdate"></app-user-edit>
+
+
+</div>

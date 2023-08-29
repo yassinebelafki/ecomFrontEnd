@@ -1,0 +1,37 @@
+<div class="mycontainer">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cartItem of cartItems">
+      <td ><img style="width: 80px" [src]="cartItem.product.banner"></td>
+      <td>{{cartItem.product.title}}</td>
+      <td>{{cartItem.product.price}} $</td>
+      <td>
+        {{cartItem.quantity}}
+      </td>
+      <td>{{cartItem.product.price * cartItem.quantity}} $</td>
+      <td><button (click)="deleteCartItem(cartItem.product.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete">
+        <i  class="fa fa-trash"></i>
+<!--        <i *ngIf="isDeleting" class="fa-solid fa-spinner fa-spin"></i>-->
+      </button></td>
+    </tr>
+    <tr >
+      <td style="font-size: 20px;font-weight: 600">Total :</td>
+      <td style="font-size: 20px;font-weight: 600;color:  #e52e06">{{calculateTotal()}} $</td>
+    </tr>
+
+    </tbody>
+  </table>
+  <div class="mycontainer-btn">
+    <button [disabled]="cartItems.length==0" [routerLink]="'/checkout/address'">Go To Checkout</button>
+  </div>
+</div>

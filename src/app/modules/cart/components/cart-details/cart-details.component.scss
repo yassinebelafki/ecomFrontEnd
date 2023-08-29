@@ -1,0 +1,51 @@
+.mycontainer {
+ padding: 200px 100px;
+}
+
+
+.mycontainer-details-quantity {
+  font-weight: 550;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.mycontainer-details-quantity-minus input {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  text-align: center;
+  width: 100px  ;
+  outline: none;
+  background-color: transparent;
+}
+i {
+  cursor: pointer;
+}
+.mycontainer-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+
+.mycontainer-btn button {
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+}
+.mycontainer-btn button:hover {
+  color: white;
+  background-color: #e52e06;
+}
+

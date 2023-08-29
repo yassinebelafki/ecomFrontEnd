@@ -1,0 +1,39 @@
+<div class="mycontainer">
+    <div class="mycontainer-title">
+      <div class="mycontainer-title-header">
+        WELCOME TO GADGET SPACE
+      </div>
+      <div class="mycontainer-title-core">
+        BROWS ALL PRODUCTS
+      </div>
+      <hr>
+    </div>
+  <div class="mycontainer-filter">
+    <div class="mycontainer-filter-item">
+        <label>Category :</label>
+        <select>
+          <option selected>All</option>
+          <option >Phones</option>
+          <option>Smart Watchs</option>
+          <option>Headphones</option>
+        </select>
+    </div>
+<!--    <div class="mycontainer-filter-item">-->
+<!--      <label>Price :</label>-->
+<!--      <select (change)="sortProduct($event)">-->
+<!--      <option value="htpl">Highest to Lowest</option>-->
+<!--      <option value="ltoh">Lowest to Highest</option>-->
+<!--    </select>-->
+<!--    </div>-->
+    <div class="mycontainer-filter-item">
+      <label>Search :</label>
+      <div class="mycontainer-others-search">
+        <input type="text" placeholder="Search..." [ngClass]="{'hota':true}" [(ngModel)]="search">
+      </div>
+    </div>
+  </div>
+  <div class="mycontainer-products">
+    <hr>
+    <app-list-products  [searchTerm]="search"></app-list-products>
+  </div>
+</div>

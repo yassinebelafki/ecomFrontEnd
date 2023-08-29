@@ -1,0 +1,50 @@
+  <nav class="mycontainer">
+      <div class="mycontainer-logo" [routerLink]="''">
+        <img src="assets/images/logo.png">
+      </div>
+    <div class="mycontainer-links">
+        <div class="mycontainer-link" [routerLink]="''">
+            Home
+        </div>
+      <div class="mycontainer-link" [routerLink]="'products'">
+          Products
+      </div>
+      <div class="mycontainer-link" >
+          Contact
+      </div>
+      <div class="mycontainer-link">
+        About
+      </div>
+    </div>
+    <div class="mycontainer-others">
+<!--          <div class="mycontainer-others-search">-->
+<!--            <input type="text" placeholder="Search..." [ngClass]="{'hota':true}">-->
+<!--          </div>-->
+        <div  class="mycontainer-others-cart" (mouseenter)="toggleCart()" (mouseleave)="toggleCart()">
+          <i class="fa-solid fa-cart-shopping fa-2xl" style="color: black;"></i>
+          <span class="cart-items-number" style="position: absolute; left: 20px;bottom: 0px ;">{{cartItemsNumber}}</span>
+          <app-cart-item-popup class="swing-in-top-fwd" [hidden]="!cartToggeled" (cartLengthChange)="changeCartItemsNbr($event)"  (mouseenter)="inCart()" (mouseleave)="inCart()"></app-cart-item-popup>
+        </div>
+        <div class="mycontainer-others-user" *ngIf="loggedin">
+          <i class="fa-solid fa-user fa-2xl c" (click)="menuToggeled=!menuToggeled"></i>
+          <div *ngIf="menuToggeled"  class="mynavbar-userprofile-list swing-in-top-fwd">
+            <a [routerLink]="'/orders'" class="links" style="cursor: pointer"><i class="fa-solid fa-shop" style="color: black"></i> Orders </a>
+            <a (click)="logout()" class="links" style="cursor: pointer"><i class="fa-solid fa-right-from-bracket" style="color: black"></i> Logout </a>
+          </div>
+       </div>
+        <div class="mycontainer-others-register" *ngIf="!loggedin">
+
+          <div class="mycontainer-others-register-login ">
+          <button class="reg-btn login-btn" [routerLink]="'login'">LOGIN</button>
+          </div>
+
+          <div class="mycontainer-others-register-signup reg-btn">
+            <button class="reg-btn signup-btn" [routerLink]="'signup'">SIGN UP</button>
+          </div>
+        </div>
+
+    </div>
+
+
+  </nav>
+

@@ -1,0 +1,36 @@
+
+<div class="mycontainer" *ngIf="ableToComment">
+  <form [formGroup]="formGroup" (submit)="sendComment()" *ngIf="!commented">
+    <div class="mycontainer-header">
+      <div class="mycontainer-header-rating" >
+        <div class="mycontainer-header-rating-text">
+          Rating :
+        </div>
+        <div class="mycontainer-header-rating-stars">
+          <ngb-rating [max]="5" [formControlName]="'rate'" ></ngb-rating>
+        </div>
+      </div>
+
+    </div>
+    <div class="mycontainer-bottom">
+      <div class="mycontainer-bottom-comment">
+        <input type="text" placeholder="Add a comment" [formControlName]="'content'">
+      </div>
+      <button type="submit" class="mycontainer-bottom-button">
+        <img src="assets/icons/submit-comment.svg">
+      </button>
+    </div>
+  </form>
+  <div class="mycontainer-thanks" *ngIf="commented">
+    <div class="mycontainer-thanks-content">
+      <div class="mycontainer-thanks-msg text-focus-in">
+        Thank you for the comment!
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mycontainer" *ngIf="!ableToComment">
+  <div class="mycontainer-msg">
+    You have to purchase the product to be able to comment!
+  </div>
+</div>

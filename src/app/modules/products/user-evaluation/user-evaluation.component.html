@@ -1,0 +1,15 @@
+<div class="mycontainer">
+  <div class="mycontainer-comment">
+    {{productEvaluation.commentContent}}
+  </div>
+  <div class="mycontainer-bottom">
+    <div class="mycontainer-bottom-author">
+      <div class="mycontainer-bottom-name">
+        Customer
+      </div>
+      <div class="mycontainer-bottom-raiting">
+        <ngb-rating [max]="5" [readonly]="true" [rate]="productEvaluation.evaluationNumber"></ngb-rating>
+      </div>
+    </div>
+  </div>
+</div>
