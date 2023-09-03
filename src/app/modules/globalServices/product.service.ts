@@ -33,7 +33,7 @@ export class ProductService {
   }
 
   // getAllProducts(){
-  //     this.httpClient.get<ProductPayload[]>(environment.baseUrl+"products").subscribe(
+  //     this.httpClient.get<ProductPayload[]>(environments.baseUrl+"products").subscribe(
   //       (response)=>{
   //         this.products=response;
   //         this.products.map(

@@ -12,7 +12,10 @@
       <p>Order Placed: {{command.localDateTime | date:'yyyy-MM-dd'}}</p>
     </div>
 
-    <button style="font-size: 13px;text-align: center;padding: 8px 13px" >
+    <button *ngIf="command.status=='delivered'"  style="font-size: 13px;text-align: center;padding: 8px 13px;background-color:#0EA01C" >
+      {{command.status}}
+    </button>
+    <button *ngIf="command.status=='undelivered'" style="font-size: 13px;text-align: center;padding: 8px 13px;background-color:red" >
       {{command.status}}
     </button>
   </div>
